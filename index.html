@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)http://getbootstrap.com/examples/offcanvas/# -->
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+
+    <title>WeTalk!</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="./css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./css/offcanvas.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+
+
+  <script type="text/javascript">
+
+
+    
+
+function sortLowToHigh() {                        //  Sort dataset percentage low to high
+
+$(".heading-smaller-persons").html("<h2>Sort order: low to high</h2>");
+
+  var $row = $('.smaller-persons');   
+
+  var $wrapper = $('.smaller-persons');           //  Puts the class testWrapper into a variable wrapper
+
+  $wrapper.find('.more-contacts').sort(function(a, b) {      //  Finds all the classes test in the class testwrapper and sorts them
+     return +a.dataset.percentage - +b.dataset.percentage;      //  Sort function not sure here
+  })
+    .appendTo($row);                  //  Appends everything to wrapper etc puts it into wrapper
+
+
+}
+
+
+function sortHighToLow() {                 //  Sort dataset percentage high to low
+
+
+$(".heading-smaller-persons").html("<h2>Sort order: high to low</h2>");
+
+  var $row = $('.smaller-persons');   
+
+  var $wrapper = $('.smaller-persons');         //  Puts the class testWrapper into a variable wrapper
+
+  $wrapper.find('.more-contacts').sort(function(a, b) {      //  Finds all the classes test in the class testwrapper and sorts them
+     return +b.dataset.percentage - +a.dataset.percentage;      //  Sort function not sure here
+  })
+    .appendTo($row);                  //  Appends everything to wrapper etc puts it into wrapper
+
+  
+
+}
+
+function sortAlphaDescending() {
+
+$(".heading-smaller-persons").html("<h2>Sort order: A to Z</h2>");
+  var $wrapper = $('.smaller-persons');
+
+
+ var $row = $('.smaller-persons');  
+  $wrapper.find('.more-contacts').sort(function(a,b){
+  var an = a.getAttribute('data-name'),
+    bn = b.getAttribute('data-name');
+
+  if(an > bn) {
+    return 1;
+  }
+  if(an < bn) {
+    return -1;
+  }
+  return 0;
+}).appendTo($row);
+
+
+}
+
+
+
+function sortAlphaAscending() {
+
+
+$(".heading-smaller-persons").html("<h2>Sort order: Z to A</h2>");
+
+  var $wrapper = $('.smaller-persons');
+
+
+ var $row = $('.smaller-persons');  
+  $wrapper.find('.more-contacts').sort(function(a,b){
+  var an = a.getAttribute('data-name'),
+    bn = b.getAttribute('data-name');
+
+  if(an < bn) {
+    return 1;
+  }
+  if(an > bn) {
+    return -1;
+  }
+  return 0;
+}).appendTo($row);
+
+}
+
+
+function randomSort() {
+$(".heading-smaller-persons").html("<h2>Sort order: random</h2>");
+
+  var $wrapper = $('.smaller-persons');
+
+
+ var $row = $('.smaller-persons');  
+
+ var arrayOfTest = $wrapper.find('.more-contacts');
+
+    var j;
+    for (var i = 0; i < arrayOfTest.length; i++) {
+        j = Math.floor(Math.random() * arrayOfTest.length);
+        $(arrayOfTest[i]).before($(arrayOfTest[j]));
+    }
+
+
+
+}
+
+
+
+</script>
+
+
+
+</head>
+ <body>
+    <nav class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">WeTalk</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+        	<ul class="nav navbar-nav">
+        		<li><a href="#">Edit list</a></li>
+        		<li class="dropdown">
+        		<a class="dropdown-toggle" data-toggle="dropdown" 
+        		href="#">Sort order<span class="caret"></span></a>
+        			<ul class="dropdown-menu">
+        				<li onclick="randomSort()"><a href="#"><font color="white">Random</font></a></li>
+        				<li class="activated"><a href="#"><font color="white">Recommended</font></a></li>
+        				<li onclick="sortLowToHigh()"><a href="#"><font color="white">Recent</font></a></li>
+        				<li onclick="sortHighToLow()"><a href="#"><font color="white">Time Elapsed</font></a></li>
+                <li onclick="sortAlphaDescending()"><a href="#"><font color="white">Name A to Z</font></a></li>
+        				<li onclick="sortAlphaAscending()"><a href="#"><font color="white">Name Z to A</font></a></li>
+
+        			</ul>
+        		</li>
+        		<li class="dropdown">
+        		<a class="dropdown-toggle" data-toggle="dropdown" 
+        		href="#">Comms apps<span class="caret"></span></a>
+        			<ul class="dropdown-menu">
+        				<li class="disabled"><a href="#"><font color="white">Dialer</font></a></li>
+        				<li><a href="#"><font color="white">Skype</font></a></li>
+        				<li><a href="#"><font color="white">WhatsApp</font></a></li>
+        				<li><a href="#"><font color="white">Messanger</font></a></li>
+        			</ul>
+        		</li>
+        		<li class="divider"></li>
+        		<li class="disabled"><a href="#"><font color="white">About</font></a></li>
+        	</ul>
+        </div><!-- /.nav-collapse -->
+      </div><!-- /.container -->
+    </nav><!-- /.navbar -->
+    
+
+  <div class="container">
+    <div class="row">
+    	<div class="main-person">
+    		<div class="jumbotron" style="position: relative; left: 0; top: 0;">
+    			<a href="details.html"><img class="img" src="img/Anna_recommend.png"
+    			style="position: relative; top: 0; left: 0;"/>
+    			</a>
+    	<!--		<img class="img-overlay img" src="img/call_icon.png"
+    			style="position: absolute; bottom: 10%; right: 15%; width:10%; height:auto;"/>
+  -->
+    
+    	</div>
+    </div>
+
+
+
+    <div class="heading-smaller-persons"><h2>Others in order:</h2></div>
+     <div class="row">
+    <div class="smaller-persons">
+   
+    	
+    	<div class="col-xs-3 col-lg-4 more-contacts" data-percentage="24" data-name="Nona M">
+    		<a href="details_Nona.html">
+    			<img class="img img-more-contacts day" src="img/profile_2.png"/>
+    		</a>
+			<p class="detail-name">Nona M</p>
+			<p class="detail-time">Last call: 1 day ago</p>
+		</div>
+
+		<div class="col-xs-3 col-lg-4 more-contacts" data-percentage="48" data-name="Mike">
+			<a href="details_Mike.html">
+				<img class="img img-more-contacts night" src="img/profile_3.png"/>
+			</a>
+			<p class="detail-name">Mike</p>
+			<p class="detail-time">Last call: 2 day ago</p>
+		</div>
+
+		<div class="col-xs-3 col-lg-4 more-contacts" data-percentage="17" data-name="John">
+			<a href="details_John.html">
+				<img class="img img-more-contacts night" src="img/profile_4.png"/>
+			</a>
+			<p class="detail-name">John</p>
+			<p class="detail-time">Last call: 17 hours ago</p>
+		</div>
+
+		<div class="col-xs-3 col-lg-4 more-contacts" data-percentage="336" data-name="Dave D">
+			<a href="details.html">
+				<img class="img img-more-contacts day" src="img/profile_5.png"/>
+			</a>
+			<p class="detail-name">Dave D</p>
+			<p class="detail-time">Last call: 14 days ago</p>
+		</div>
+
+		<div class="col-xs-3 col-lg-4 more-contacts" data-percentage="72" data-name="Tom">
+			<a href="details.html">
+				<img class="img img-more-contacts night" src="img/profile_6.png"/>
+			</a>
+			<p class="detail-name">Tom</p>
+			<p class="detail-time">Last call: 3 day ago</p>
+		</div>
+
+		<div class="col-xs-3 col-lg-4 more-contacts" data-percentage="252" data-name="Beck">
+			<a href="details.html">
+				<img class="img img-more-contacts day" src="img/profile_2.png"/>
+			</a>
+			<p class="detail-name">Becky</p>
+			<p class="detail-time">Last call: 6 day ago</p>
+		</div>
+
+		<div class="col-xs-3 col-lg-4 more-contacts" data-percentage="24" data-name="Hugo">
+			<a href="details.html">
+				<img class="img img-more-contacts night" src="img/profile_3.png"/>
+			</a>
+			<p class="detail-name">Hugo</p>
+			<p class="detail-time">Last call: 1 day ago</p>
+		</div>
+
+		<div class="col-xs-3 col-lg-4 more-contacts" data-percentage="4" data-name="Bastian">
+			<a href="details.html">
+				<img class="img img-more-contacts day" src="img/profile_1.png"/>
+			</a>
+			<p class="detail-name">Elsa</p>
+			<p class="detail-time">Last call: 4 hours ago</p>
+		</div>
+
+	
+			<div class="col-xs-3 col-lg-4 more-contacts" data-percentage="24" data-name="Stina">
+				<a href="details.html">
+					<img class="img img-more-contacts day" src="img/profile_2.png"/>
+				</a>
+				<p class="detail-name">Stina</p>
+				<p class="detail-time">Last call: 1 day ago</p>
+			</div>
+
+			<div class="col-xs-3 col-lg-4 more-contacts" data-percentage="48" data-name="Gustaf">
+				<a href="details.html">
+					<img class="img img-more-contacts night" src="img/profile_3.png"/>
+				</a>
+				<p class="detail-name">Gustaf</p>
+				<p class="detail-time">Last call: 2 day ago</p>
+			</div>
+
+			<div class="col-xs-3 col-lg-4 more-contacts" data-percentage="17" data-name="Filip">
+				<a href="details.html">
+					<img class="img img-more-contacts night" src="img/profile_4.png"/>
+				</a>
+				<p class="detail-name">Filip</p>
+				<p class="detail-time">Last call: 17 hours ago</p>
+			</div>
+
+			<div class="col-xs-3 col-lg-4 more-contacts" data-percentage="336" data-name="Daniel">
+				<a href="details.html">
+					<img class="img img-more-contacts day" src="img/profile_5.png"/>
+				</a>
+				<p class="detail-name">Daniel</p>
+				<p class="detail-time">Last call: 14 days ago</p>
+			</div>
+
+			<div class="col-xs-3 col-lg-4 more-contacts" data-percentage="72" data-name="Eduardo">
+				<a href="details.html">
+					<img class="img img-more-contacts night" src="img/profile_6.png"/>
+				</a>
+				<p class="detail-name">Eduardo</p>
+				<p class="detail-time">Last call: 3 day ago</p>
+			</div>
+
+			<div class="col-xs-3 col-lg-4 more-contacts" data-percentage="144" data-name="Ash">
+				<a href="details.html">
+					<img class="img img-more-contacts day" src="img/profile_2.png"/>
+				</a>
+				<p class="detail-name">Ashley</p>
+				<p class="detail-time">Last call: 6 day ago</p>
+			</div>
+
+			<div class="col-xs-3 col-lg-4 more-contacts" data-percentage="24" data-name="Bertil">
+				<a href="details.html">
+					<img class="img img-more-contacts night" src="img/profile_3.png"/>
+				</a>
+				<p class="detail-name">Bertil</p>
+				<p class="detail-time">Last call: 1 day ago</p>
+			</div>
+
+			<div class="col-xs-3 col-lg-4 more-contacts" data-percentage="96" data-name="Claes">
+				<a href="details.html">
+					<img class="img img-more-contacts day" src="img/profile_1.png"/>
+				</a>
+				<p class="detail-name">Samantha</p>
+				<p class="detail-time">Last call: 4 day ago</p>
+
+			</div>
+	
+    
+    </div><!-- smaller persons -->
+</div>	<!-- div row -->
+  </div><!--/.container-->
+</div>
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="./js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="./js/ie10-viewport-bug-workaround.js"></script>
+    <script src="./js/offcanvas.js"></script>
+</body>
+</html>

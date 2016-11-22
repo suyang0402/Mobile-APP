@@ -1,0 +1,183 @@
+.navbar-toggle{
+    border: 0;
+    float:left;
+}
+
+.nav.navbar-nav li a {    /* Does not change the whole navbar  Added by jacob to change color of navbar text*/
+    color: white;
+}
+
+
+
+  .navbar-inverse .navbar-nav .open .dropdown-menu>li>a, .navbar-inverse .navbar-nav .open .dropdown-menu {
+    background-color: #f7b599;
+    color:#f7b599;
+  }
+
+.img{
+    width:100%;
+    padding-top:10px;
+}
+
+.post-content {
+    bottom:0;
+    left:0;
+    position: absolute;
+}
+
+.thumbnail{
+    position:relative;
+}
+
+.jumbotron{
+    padding:0 0;
+    background-color:#fff;
+}
+
+.container .jumbotron{
+    padding:0 0 0 0;
+    bottom: 0;
+}
+
+.more-contacts{
+    margin-bottom: 10px;
+    padding-right: 10px;
+}
+
+.contacts-overlay {
+  //background: url(http://s3-us-west-2.amazonaws.com/s.cdpn.io/3/skyscrapers.jpg);
+  background-attachment: fixed;
+  overflow: hidden;
+}
+.contacts > label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 10px;
+  background: inherit;
+  background-attachment: fixed;
+}
+.contacts > label::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  background-attachment: fixed;
+  -webkit-filter: blur(12px);
+  filter: blur(12px);
+}
+
+/*.body-details{*/
+    /*padding-top:0;*/
+/*}*/
+
+.parent-image{
+    padding-right:0;
+    padding-left:0;
+    padding-top:0;
+    padding-bottom:0;
+}
+/*.body-details,.head-details{*/
+    /*height:100%*/
+/*}*/
+div.wrap{
+    height:100%; overflow:hidden;
+}
+
+/*.body-details{*/
+    /*overflow: hidden;*/
+/*}*/
+.navbar-inverse {
+    background-color: #f29b76;
+    border-color: #f29b76;
+}
+
+.navbar-inverse .navbar-brand{
+    color:#ffffff;
+}
+.img-more-contacts{
+    border: 2px solid;
+    padding-top: 0;
+}
+
+.detail-name{
+    text-align: center;
+    color: #666666;
+    font-weight: 400;
+    font-size: medium;
+    margin: 0;
+}
+
+.detail-time{
+    text-align: center;
+    color: #666666;
+    font-weight: 300;
+    font-size: small;
+    margin: 0;
+    margin-top: -3;
+}
+.day{
+    border-color: #f29b76;
+}
+
+.night{
+border-color: #9d9d9d ;
+}
+.img-overlay{
+    width:100%;
+}
+
+#container {
+
+    text-align: justify;
+    /*-ms-text-justify: distribute-all-lines;*/
+    /*text-justify: distribute-all-lines;*/
+
+    /* just for demo */
+    /*min-width: 612px;*/
+}
+
+.box1, .box2, .box3, .box4, .box5 {
+    width: 15%;
+
+    vertical-align: top;
+    display: inline-block;
+    *display: inline;
+    zoom: 1
+}
+
+.stretch {
+    width: 100%;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0
+}
+
+.mid-p{
+text-align: center;
+    color:#666868;
+    margin: 0 0 10px;
+    font-size: 16px;
+    font-style: italic;
+
+}
+
+.info{
+    margin:0;
+    color: #666868;
+}
+
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover{
+background-color:#f7b599;}
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover{
+    background-color:#f7b599;
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: #f7b599;
+}
